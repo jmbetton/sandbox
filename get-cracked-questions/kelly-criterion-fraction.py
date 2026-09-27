@@ -2,7 +2,7 @@
 # Given two floats (p, b)
 # p: probability of winning
 # b: net odds 
-# if b = 2.0, that means a bet of $10 returns $20, 2x the stake
+# If b = 2.0, that means a bet of $10 returns $20, 2x the stake
 # Create a function using the kelly criterion formula that returns:
 # The optimal bet sizing (fraction of bankroll that maximizes long-run return)
 # If the optimal bet sizing is negative return 0.0, don't bet/trade

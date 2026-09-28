@@ -7,3 +7,5 @@ def die_expected_value(n):
     
     return round(expected_val, 1)
 
+
+print(die_expected_value(6))

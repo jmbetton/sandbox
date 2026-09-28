@@ -1,1 +1,267 @@
 .DS_Store
+
+# =============================================================================
+# Reusable .gitignore template
+# -----------------------------------------------------------------------------
+# Sections marked [BASICS] are active and safe for nearly every project.
+# Sections marked [OPTIONAL] are commented out: uncomment the lines that fit
+# the project you're starting.
+#
+# Tips:
+#   - A trailing "/" matches directories only (e.g. data/).
+#   - A leading "!" re-includes something an earlier rule excluded.
+#   - Already-tracked files are NOT affected by .gitignore. To stop tracking:
+#         git rm --cached <file>
+#   - Check why a file is ignored:  git check-ignore -v <file>
+# =============================================================================
+
+
+# =============================================================================
+# [BASICS] Secrets and credentials  — never commit these
+# =============================================================================
+.env
+.env.*
+.venv
+*.pem
+*.key
+secrets.*
+credentials.*
+*_credentials.json
+service-account*.json
+
+
+# =============================================================================
+# [BASICS] Operating system files
+# =============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+
+# =============================================================================
+# [BASICS] Editors and IDEs
+# =============================================================================
+# VS Code — ignores personal settings but keeps shareable ones
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# JetBrains (PyCharm, DataGrip, etc.)
+.idea/
+
+# Vim / Emacs / misc
+*.swp
+*.swo
+\#*\#
+.\#*
+
+
+# =============================================================================
+# [BASICS] Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging / build output
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+
+# Testing, linting, type-checking caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+
+# uv / poetry / pdm local state (lock files SHOULD be committed)
+.pdm-python
+.python-version        # remove this line if you want to pin the version for others
+
+
+# =============================================================================
+# [BASICS] Logs and temp files
+# =============================================================================
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+
+
+# =============================================================================
+# [OPTIONAL] Jupyter notebooks
+# Uncomment for any notebook-based analysis project.
+# =============================================================================
+# .ipynb_checkpoints/
+# .jupyter/
+# Consider nbstripout (pip install nbstripout) to strip outputs before commit
+# instead of ignoring notebooks themselves.
+
+
+# =============================================================================
+# [OPTIONAL] Data files
+# Use for research/econometrics/ML projects where raw data is large,
+# licensed (WRDS, Bloomberg, CRSP), or reproducible from a download script.
+# Keep a data/README.md describing where the data comes from.
+# =============================================================================
+# data/raw/
+# data/interim/
+# data/processed/
+# !data/README.md
+# *.csv
+# *.parquet
+# *.feather
+# *.h5
+# *.hdf5
+# *.pkl
+# *.pickle
+# *.xlsx
+# *.dta                # Stata data
+# *.sas7bdat           # SAS data
+# *.zip
+# *.gz
+
+
+# =============================================================================
+# [OPTIONAL] Machine learning artifacts
+# Trained models and experiment tracking output are usually large and
+# regenerable. Use Git LFS or a model registry if you must version them.
+# =============================================================================
+# models/
+# checkpoints/
+# *.pt
+# *.pth
+# *.ckpt
+# *.onnx
+# *.joblib
+# mlruns/              # MLflow
+# wandb/               # Weights & Biases
+# lightning_logs/
+# runs/                # TensorBoard
+# catboost_info/
+
+
+# =============================================================================
+# [OPTIONAL] Trading / market data projects
+# For broker API or backtesting work: keep account configs, fills, and
+# cached market data out of the repo.
+# =============================================================================
+# config/local*.yaml
+# config/*account*
+# backtest_results/
+# cache/
+# *.db                 # local SQLite trade/price stores
+# orders_*.csv
+# fills_*.csv
+
+
+# =============================================================================
+# [OPTIONAL] Databases / SQL projects
+# =============================================================================
+# *.sqlite
+# *.sqlite3
+# *.db
+# *.db-journal
+# *.duckdb
+# *.duckdb.wal
+# dump.sql
+# *.dump
+
+
+# =============================================================================
+# [OPTIONAL] R / RStudio
+# =============================================================================
+# .Rhistory
+# .RData
+# .Rproj.user/
+# .Ruserdata
+# renv/library/        # commit renv.lock, not the library
+# *_cache/
+# *_files/             # knitr/Quarto rendered figures
+
+
+# =============================================================================
+# [OPTIONAL] Stata / MATLAB / SAS
+# =============================================================================
+# *.smcl               # Stata logs
+# *.gph                # Stata graphs
+# *.asv                # MATLAB autosave
+# *.mex*
+# *.lst                # SAS listings
+
+
+# =============================================================================
+# [OPTIONAL] LaTeX / Quarto / papers
+# For thesis, problem sets, or research write-ups.
+# =============================================================================
+# *.aux
+# *.bbl
+# *.blg
+# *.fdb_latexmk
+# *.fls
+# *.out
+# *.synctex.gz
+# *.toc
+# *.nav
+# *.snm
+# _minted*/
+# /.quarto/
+# _site/
+# _freeze/
+
+
+# =============================================================================
+# [OPTIONAL] Output / generated reports
+# Ignore if figures and tables are fully reproducible from code.
+# =============================================================================
+# output/
+# figures/
+# reports/*.html
+# reports/*.pdf
+
+
+# =============================================================================
+# [OPTIONAL] Web / JavaScript (Node, Streamlit, Dash front ends)
+# =============================================================================
+# node_modules/
+# .next/
+# .nuxt/
+# .cache/
+# .parcel-cache/
+# npm-debug.log*
+# yarn-error.log*
+# .streamlit/secrets.toml
+
+
+# =============================================================================
+# [OPTIONAL] Docker / infrastructure
+# =============================================================================
+# .docker/
+# docker-compose.override.yml
+# .terraform/
+# *.tfstate
+# *.tfstate.*
+
+
+# =============================================================================
+# [PROJECT-SPECIFIC]
+# Add anything unique to this repo below.
+# =============================================================================

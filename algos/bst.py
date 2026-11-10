@@ -28,8 +28,9 @@ Recursion: Process of defining a problem or funciton in terms of smaller/simpler
 
 
 class Node:
-    def __init__(self, key):
-        self.key 
+    def __init__(self, key, parent=None):
+        self.key = key
+        self.parent = parent
         self.left = None
         self.right = None
 
@@ -47,12 +48,12 @@ class BSTree:
     def _insert(self, node, key):
         if key < node.key:
             if node.left is None:
-                node.left = Node(key)
+                node.left = Node(key, parent=node)
             else:
                 self._insert(node.left, key)
         else:
             if node.right is None:
-                node.right = Node(key)
+                node.right = Node(key, parent=node)
             else:
                 self._insert(node.right, key)
 
@@ -76,6 +77,24 @@ class BSTree:
 
         if key == node.key:
             if node.left is None and node.right is None:
+                if node.parent.left is node:
+                    node.parent.left = None
+                if node.parent.right is node:
+                    node.parent.right = None
+            if node.left is not None and node.right is None:
+                if node.parent.left is node:
+                    node.parent.left = node.left
+                if node.parent.right is node:
+                    node.parent.right = node.left
+            if node.left is None and node.right is not None:
+                if node.parent.left is node:
+                    node.parent.left = node.right
+                if node.parent.right is node:
+                    node.parent.right = node.right
+            if node.left is not None and node.right is not None:
+                # need to handle this case of deletion later, seems like it will require complex re-sorting and balancing the tree
+                
+
                 
 
 

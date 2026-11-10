@@ -57,6 +57,22 @@ class BSTree:
             else:
                 self._insert(node.right, key)
 
+    def search(self, key):
+        if self.root is None:
+            return "No root node found"
+        else:
+            self._search(self.root, key)
+
+    def _search(self, node, key):
+        if node.key == key:
+            return node
+        elif node.key > key:
+            self._search(node.left, key)
+        elif node.key < key:
+            self._search(node.right, key)
+        else:
+            return None
+
     def delete(self, key):
         if self.root is None:
             return "This is an empty tree, no node to delete"
